@@ -1,0 +1,245 @@
+<script>{
+  if (!window.CUSTOM_UI_LIST) window.CUSTOM_UI_LIST = [];
+  window.CUSTOM_UI_LIST.push({
+    name: 'lovelace-card-touchpad',
+    url: 'https://github.com/Qinver-china/lovelace-card-touchpad',
+    version: '20191010'
+  });
+}</script>
+<dom-module id="lovelace-card-touchpad">
+<template>
+<style>
+.hacard{padding:1pc}.flex{margin-left:1pc;display:flex;justify-content:space-between;align-items:center;min-width:0;flex:1 1 0%}.info,.info>*{white-space:nowrap;text-overflow:ellipsis;overflow:hidden}state-badge{cursor:pointer}paper-button{text-align:center;padding:5px;min-width:36px;height:36px;border-radius:50%;margin:0;color:var(--button-color,var(--primary-text-color))}#kuang{position:relative;height:300px;opacity:.2;text-align:center;border-radius:15px;margin:15px 0;border:.1em solid var(--primary-text-color);cursor:pointer}#dzbj{position:absolute;top:0;right:0;bottom:0;left:0;margin:auto;width:200px;max-width:85%;height:200px;border-radius:50%;opacity:0}@keyframes dhzuo{50%{opacity:.8;background:radial-gradient(circle at right,transparent 70%,var(--primary-color) 90%)}80%{opacity:0;transform:translateX(-100px) scale(0.7)}}@keyframes dhyou{50%{opacity:.8}50%,80%{background:radial-gradient(circle at left,transparent 70%,var(--primary-color) 90%)}80%{opacity:0;transform:translateX(100px) scale(0.7)}}@keyframes dhshang{0%{opacity:0;transform:translateY(20px)}50%{opacity:.8;background:radial-gradient(circle at bottom,transparent 70%,var(--primary-color) 90%)}80%{transform:translateY(-70px) scale(0.7);opacity:0}}@keyframes dhxia{0%{opacity:0;transform:translateY(-20px)}50%{opacity:.8;background:radial-gradient(circle at top,transparent 70%,var(--primary-color) 90%)}80%{transform:translateY(70px) scale(0.7);opacity:0}}@keyframes dhok{0%{opacity:.5;transform:scale(0);opacity:0}0%,50%{background:radial-gradient(transparent 20%,var(--primary-color)50%,var(--primary-color) 60%,transparent 72%)}50%{opacity:.5}to{transform:scale(.6);background:radial-gradient(transparent 50%,var(--primary-color)65%,var(--primary-color) 60%,transparent 72%);opacity:0}}@keyframes double{0%{transform:scale(0)}0%,50%{background:radial-gradient(transparent 20%,var(--primary-color) 35%,transparent 50%,var(--primary-color) 64%,transparent 75%)}50%{opacity:.6}to{transform:scale(.7);background:radial-gradient(transparent 20%,var(--primary-color) 35%,transparent 50%,var(--primary-color) 64%,transparent 75%)}}@keyframes cshang{0%{transform:translateY(0);opacity:1;height:60px;border-radius:10px}0%,70%{background:linear-gradient(to top,transparent 20%,var(--primary-color) 50%,transparent 80%);width:260px}70%{opacity:.75;height:26px;border-radius:4px}to{transform:translateY(-125px);opacity:0;background:linear-gradient(to top,transparent 20%,var(--primary-color) 50%,transparent 80%);width:200px;height:1pc}}@keyframes cxia{0%{transform:translateY(0);opacity:1;height:60px;border-radius:10px}0%,70%{background:linear-gradient(to top,transparent 20%,var(--primary-color) 50%,transparent 80%);width:260px}70%{opacity:.75;height:26px;border-radius:4px}to{transform:translateY(125px);opacity:0;background:linear-gradient(to top,transparent 20%,var(--primary-color) 50%,transparent 80%);width:200px;height:1pc}}@keyframes czuo{0%{transform:translateX(0);opacity:1;width:60px;border-radius:10px}0%,70%{background:linear-gradient(to left,transparent 20%,var(--primary-color) 50%,transparent 80%);height:15pc}70%{opacity:.75;width:26px;border-radius:4px}to{transform:translateX(-145px);opacity:0;background:linear-gradient(to left,transparent 20%,var(--primary-color) 50%,transparent 80%);height:200px;width:1pc}}@keyframes cyou{0%{transform:translateX(0);opacity:1;width:60px;border-radius:10px}0%,70%{background:linear-gradient(to left,transparent 20%,var(--primary-color) 50%,transparent 80%);height:15pc}70%{opacity:.75;width:26px;border-radius:4px}to{transform:translateX(145px);opacity:0;background:linear-gradient(to left,transparent 20%,var(--primary-color) 50%,transparent 80%);height:200px;width:1pc}}#wz1{margin-top:5pc;font-size:1pc;margin-right:-10px;letter-spacing:1pc;margin-bottom:10px}#wz2{font-size:9pt;transition:5s}#ts,#ts1,#wz2{opacity:var(--ts-o)}#ts,#ts1{position:absolute;top:4px;left:0;right:0;transition:20s}#ts{top:20px;font-size:9pt}.b2{text-align:right}.fold{display:var(--io-d,none)}
+</style>
+<ha-card class="hacard">
+<div id="quyu">
+  <div style="display:flex;align-items:center">
+    <template is="dom-if" if="[[icon]]"><iron-icon on-tap="fold" style="flex:0 0 40px" icon$="{{icon}}"></iron-icon></template>
+    <div class="flex">
+      <div on-tap="fold" class="fot">[[config.name]]</div>
+      <div on-click="stopPropagation">
+        <div class="b2">
+          <template is="dom-repeat" items="[[config.top_buttons]]" as="entity"><state-badge on-tap="bcall" state-obj="[[stateObj(hass,entity)]]" hass="[[hass]]" class="style-scope state-info"></state-badge></template>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class$="{{fold_class}}">
+    <template is="dom-if" if="[[config.touchpad]]">
+    <div id="kuang" on-tap="ttk" on-track="ttk" on-dblclick="ttk">
+      <div id="dzbj" style$="{{dzfk}}"></div>
+      <div id="wz">
+        <div id="ts1">{{d}}</div>
+        <div id="wz1">滑动触控区</div>
+        <div id="wz2">轻滑：ok键</div>
+        <div id="wz2">中滑：方向键</div>
+        <div id="wz2">左长滑：主页键</div>
+        <div id="wz2">右长滑：返回键</div>
+        <div id="wz2">上长滑：菜单键</div>
+      </div>
+    </div>
+    </template>
+    <div on-click="stopPropagation">
+      <div class="b2">
+        <template is="dom-repeat" items="[[config.bottom_buttons]]" as="entity"><paper-button on-tap="bcall"><state-badge state-obj="[[stateObj(hass,entity)]]" hass="[[hass]]" class="style-scope state-info"></state-badge></paper-button></template>
+      </div>
+    </div>
+  </div>
+</div>
+</ha-card>
+</template>
+</dom-module>
+<script>
+Polymer({
+  is: 'lovelace-card-touchpad',
+  properties: {
+    hass: {
+      type: Object,
+    },
+    config: {
+      type: Object,
+    },
+    stateObj: {
+      type: Object,
+    },
+  },
+  setConfig(config) {
+    this.config = config
+  },
+  ready: function(hass, config) {
+    var config = this.config;
+    this.fold_class = config.fold&&(config.name||config.icon) ? 'fold' : '', this.icon = config.icon;
+    if (!config.debug) {
+      this.updateStyles({
+        '--ts-o': '0'
+      })
+    }
+    this.lastCT = 0;
+  },
+  stateObj: function(hass, entity) {
+    return hass.states[entity]
+  },
+  friendly_name: function(hass, config) {
+    entity = this.config.entity;
+    return hass.states[entity].attributes.friendly_name
+  },
+  listeners: {
+    'touchstart': '_preventDefault',
+  },
+  _preventDefault: function(event) {
+    event.preventDefault()
+  },
+  fold: function(e) {
+    var i = this.i;
+    if (i == 1) {
+      this.updateStyles({
+        '--io-d': 'none',
+      });
+      this.i = 0
+    } else {
+      this.updateStyles({
+        '--io-d': 'block',
+      });
+      this.i = 1
+    }
+  },
+  ttk: function(e) {
+    var _e = this.config.touchpad,
+      _nl = '未设置ID',
+      ob = _e.tap ? _e.tap : _nl,
+      sb = _e.up ? _e.up : _nl,
+      xb = _e.down ? _e.down : _nl,
+      zb = _e.left ? _e.left : _nl,
+      yb = _e.right ? _e.right : _nl,
+      cob = _e.Press ? _e.Press : ob,
+      sob = _e.double_tap ? _e.double_tap : ob,
+      csb = _e.Long_up ? _e.Long_up : sb,
+      cxb = _e.Long_down ? _e.Long_down : xb,
+      czb = _e.Long_left ? _e.Long_left : zb,
+      cyb = _e.Long_right ? _e.Long_right : yb,
+      tto = _e.double_tap ? 300 : 0,
+      dzfk = '',
+      xs = '',
+      fx = '',
+      timeOut = null;
+    if (!e.detail.state) {
+      switch (e.type) {
+      case 'tap':
+        this.lastCT++;
+        if (_e.double_tap && this.lastCT > 1) {
+          this.lastCT = 0;
+          clearTimeout(this.timeOut);
+          fx = sob;
+          xs = '双击：' + sob;
+          dzfk = 'animation:double .4s;';
+          this.dzfk = dzfk;
+          this.d = xs;
+          if (fx != _nl) {
+            this.callService(fx)
+          };
+          setTimeout(function() {
+            this.dzfk = ''
+          }.bind(this), 500)
+        } else {
+          clearTimeout(this.timeOut);
+          this.timeOut = setTimeout(function() {
+            fx = ob;
+            xs = '单击：' + ob;
+            dzfk = 'animation:dhok .4s;';
+            this.dzfk = dzfk;
+            this.d = xs
+            if (fx != _nl) {
+              this.callService(fx)
+            };
+            this.lastCT = 0;
+            setTimeout(function() {
+              this.dzfk = ''
+            }.bind(this), 500)
+          }.bind(this), tto)
+        }
+        break
+      }
+    } else {
+      switch (e.detail.state) {
+      case 'end':
+        var x = e.detail.dx,
+          y = e.detail.dy,
+          jd = Math.atan2(x, y) * 180 / Math.PI
+        if (Math.abs(x) > 40 || Math.abs(y) > 40) {
+          if (jd >= -135 && jd <= -45) {
+            if (Math.abs(x) < 180) {
+              fx = zb;
+              xs = '左滑：' + zb;
+              dzfk = 'animation:dhzuo .4s;'
+            } else if (Math.abs(x) > 180) {
+              fx = czb;
+              xs = _e.Long_left ? '长左滑：' + czb : '左滑：' + zb;
+              dzfk = _e.Long_left ? 'animation:czuo .3s;' : 'animation:dhzuo .4s;'
+            }
+          } else if (jd > 45 && jd < 135) {
+            if (Math.abs(x) < 180) {
+              fx = yb;
+              xs = '右滑：' + yb;
+              dzfk = 'animation:dhyou .4s;'
+            } else if (Math.abs(x) > 180) {
+              fx = cyb;
+              xs = _e.Long_right ? '长右滑：' + cyb : '右滑：' + yb;
+              dzfk = _e.Long_right ? 'animation:cyou .3s;' : 'animation:dhyou .4s;'
+            }
+          } else if ((jd >= 135 && jd <= 180) || (jd >= -180 && jd < -135)) {
+            if (Math.abs(y) < 180) {
+              fx = sb;
+              xs = '上滑：' + sb;
+              dzfk = 'animation:dhshang .4s;'
+            } else if (Math.abs(y) > 180) {
+              fx = csb;
+              xs = _e.Long_up ? '长上滑：' + csb : '上滑：' + sb;
+              dzfk = _e.Long_up ? 'animation:cshang .3s;' : 'animation:dhshang .4s;'
+            }
+          } else if (jd >= -45 && jd <= 45) {
+            if (Math.abs(y) < 180) {
+              fx = xb;
+              xs = '下滑：' + xb;
+              dzfk = 'animation:dhxia .4s;'
+            } else if (Math.abs(y) > 180) {
+              fx = cxb;
+              xs = _e.Long_down ? '长下滑：' + cxb : '下滑：' + xb;
+              dzfk = _e.Long_down ? 'animation:cxia .3s;' : 'animation:dhxia .4s;'
+            }
+          }
+        }
+        this.dzfk = dzfk;
+        this.d = xs;
+        if (fx != _nl) {
+          this.callService(fx)
+        };
+        setTimeout(function() {
+          this.dzfk = ''
+        }.bind(this), 500);
+        break
+      }
+    }
+  },
+  bcall: function(e) {
+    var id = e.model.__data.entity;
+    this.callService(id)
+  },
+  stopPropagation(e) {
+    e.stopPropagation()
+  },
+  callService: function(ev, stateObj) {
+    var entity = ev;
+    var domain = entity.split('.')[0];
+    if (domain === 'script') {
+      var service = entity.split('.')[1];
+      var data = {}
+    } else {
+      var service = ev.service ? ev.split('.')[1] : 'toggle';
+      var data = {
+        'entity_id': ev
+      }
+    }
+    this.hass.callService(domain, service, data)
+  },
+});
+</script>
