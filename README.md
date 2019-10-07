@@ -27,14 +27,13 @@
 4. 触摸面板可选择是否折叠
 5. 配置文件十分简单，几乎所有的配置代码都可以选择性删除
 ```
-截图预览：
-![效果图](https://github.com/Qinver-china/homeassistant-Custom_UI_more-info-qinver-tv/blob/master/Screenshots/%E6%95%88%E6%9E%9C%E5%9B%BE1.png)   
-![效果图](https://github.com/Qinver-china/homeassistant-Custom_UI_more-info-qinver-tv/blob/master/Screenshots/%E6%95%88%E6%9E%9C%E5%9B%BE2.png)  
+截图预览： 
+![效果图](https://raw.githubusercontent.com/Qinver-china/lovelace-card-touchpad/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE/%E8%A7%A6%E6%91%B8%E6%9D%BF.jpg)    
 
 ## 安装以开始使用：
-1. 下载[lovelace-card-touchpad.html](https://github.com/Qinver-china/homeassistant-Custom_UI_more-info-qinver-tv/blob/master/www/custom_ui/more-info-qinver-tv.html)文件放入到你homeassistant配置文件目录的`~~/www`文件夹下  
-如图所示： 
-![](https://github.com/Qinver-china/homeassistant-Custom_UI_more-info-qinver-tv/blob/master/Screenshots/%E4%BF%9D%E5%AD%98%E5%9C%B0%E5%9D%80.png)  
+1. 下载本仓库的`www/lovelace-card-touchpad.html`文件放入到你homeassistant配置文件目录的`~~/www`文件夹下  
+如图所示：  
+![](https://raw.githubusercontent.com/Qinver-china/lovelace-card-touchpad/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE/%E6%88%AA%E5%9B%BE1.jpg)  
 2. 在homeassistant配置文件`ui-lovelace.yaml`中的对应位置加入以下代码，以加载lovelace-card-touchpad
 ```yaml
 resources:
