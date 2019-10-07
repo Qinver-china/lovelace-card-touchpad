@@ -27,7 +27,7 @@
 4. 触摸面板可选择是否折叠
 5. 配置文件十分简单，几乎所有的配置代码都可以选择性删除
 ```
-截图预览： 
+
 ![效果图](https://raw.githubusercontent.com/Qinver-china/lovelace-card-touchpad/master/%E5%B1%8F%E5%B9%95%E6%88%AA%E5%9B%BE/%E8%A7%A6%E6%91%B8%E6%9D%BF.jpg)    
 
 ## 安装以开始使用：
@@ -75,9 +75,9 @@ resources:
 2. 配置文件touchpad的触摸功能建议使用`script`的服务的ID，因为这种不需要状态反馈。`top_buttons`和`bottom_buttons`可以随意，但不支持传感器
 
 ## 与我联系和反馈
-欢迎浏览我的个人博客[倾微博客]（http://blog.qiwe.ink） 
-欢迎加入[『瀚思彼岸』](https://bbs.hassbian.com)论坛  
-如果遇到问题请在[这个帖子](https://bbs.hassbian.com/thread-4024-1-1.html)中提交回复  
+欢迎浏览我的个人博客[倾微博客]（http://blog.qiwe.ink)   
+欢迎加入[『瀚思彼岸』](https://bbs.hassbian.com)论坛   
+如果遇到问题请在[这个帖子](https://bbs.hassbian.com/thread-4024-1-1.html)中提交回复   
 
 
 
