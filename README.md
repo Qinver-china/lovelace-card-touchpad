@@ -1,4 +1,4 @@
-# lovelace-card-touchpad
+# lovelace-card-touchpad for homeassistant lovelace UI
 ### 用于homeassistant的lovelace的一个触摸板卡片
 
 去年我发布过一个[more-info-qinver-tv](https://github.com/Qinver-china/homeassistant-Custom_UI_more-info-qinver-tv)的自定义详情页，初衷就是为了解决homeassistant不方便触摸操作的问题，因为像很多类似于电视遥控器的控制，如果只能点击按钮，那么在移动设备上的体验是很糟糕的！
@@ -75,7 +75,7 @@ resources:
 2. 配置文件touchpad的触摸功能建议使用`script`的服务的ID，因为这种不需要状态反馈。`top_buttons`和`bottom_buttons`可以随意，但不支持传感器
 
 ## 与我联系和反馈
-欢迎浏览我的个人博客[倾微博客]（http://blog.qiwe.ink)   
+欢迎浏览我的个人博客[倾微博客](http://blog.qiwe.ink)   
 欢迎加入[『瀚思彼岸』](https://bbs.hassbian.com)论坛   
 如果遇到问题请在[这个帖子](https://bbs.hassbian.com/thread-4024-1-1.html)中提交回复   
 
