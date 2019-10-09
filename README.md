@@ -77,7 +77,7 @@ resources:
 ## 与我联系和反馈
 欢迎浏览我的个人博客[倾微博客](http://blog.qiwe.ink)   
 欢迎加入[『瀚思彼岸』](https://bbs.hassbian.com)论坛   
-如果遇到问题请在[这个帖子](https://bbs.hassbian.com/thread-4024-1-1.html)中提交回复   
+如果遇到问题请在[这个帖子](https://bbs.hassbian.com/thread-8368-1-1.html)中提交回复   
 
 
 
